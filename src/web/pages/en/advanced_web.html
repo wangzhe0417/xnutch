@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<style type="text/css">
+a:link {
+	color: #0000cc
+}
+
+a:visited {
+	color: #551a8b
+}
+
+a:active {
+	color: #ff0000
+}
+
+.t1 {
+	background-color: #d9e5f5;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 22px;
+}
+
+.t2 {
+	background-color: #d9e5f5;
+	font-size: 14px;
+	text-align: right;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 14px;
+}
+</style>
+
+<script src="../js/advanced_search.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Advanced Web Search</title>
+</head>
+
+<body onkeydown="BindEnter(event)">
+	<table width="760" border="0" align="center">
+		<tr>
+			<td valign="bottom" width="116"><a href="search.html"><img
+					src="../img/logo_small.gif" alt="Kidden" border="0"></a></td>
+			<td valign="bottom">
+				<table cellSpacing=0 cellPadding=0 width="100%" border=0>
+					<tr>
+						<td class="t1">Advanced Web Search</td>
+						<td class="t2"><a href="search.html">Kidden</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	
+	<form style="MARGIN: 0px" name=f action="">
+		<input type="hidden" name="ty" value="web">
+		<table width="760" cellSpacing=0 cellPadding=0 align="center" border=0>
+			<tr>
+				<td>
+					<table cellSpacing=0 cellPadding=0 width="100%" border=0>
+						<tr bgColor=#d9e1f7>
+							<td>
+								<table style="font-size: 14px" cellSpacing=0 cellPadding=2
+									width="98%">
+									<tr>
+										<td vAlign=top width="15%"><br>
+										<b>Pages with</b></td>
+										<td width="85%">
+											<table style="font-size: 14px" cellSpacing=0 cellPadding=2
+												width="100%">
+												<tr>
+													<td width="34%" nowrap><b>All</b> these words</td>
+													<td width="31%" nowrap><input maxLength=100 size=35
+														name="qand"></td>
+													<td vAlign=top width="35%" rowSpan=4><input
+														type=button value="Kidden Search" id="AdvancedSearch" onClick="doSubmit()"></td>
+												</tr>
+												<tr>
+													<td width="34%" nowrap>This <b>exact</b> phrase
+													</td>
+													<td width="31%" nowrap><input maxLength=100 size=35
+														name="qphrase"></td>
+												</tr>
+												<tr>
+													<td width="34%" nowrap><b>Any</b> of these words</td>
+													<td width="31%" nowrap><input maxLength=100 size=35
+														name="qor"></td>
+												</tr>
+												<tr>
+													<td width="34%" nowrap><b>None</b> of these words</td>
+													<td width="31%" nowrap><input maxLength=100 size=35
+														name="qnot"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table style="MARGIN-TOP: 6px; font-size: 14px;" cellSpacing=0
+									cellPadding=6 width="98%">
+									<tr>
+										<td width="15%"><b>Number</b></td>
+										<td width="29%">The number of each hit page is</td>
+										<td width="56%"><select name="hitsPerPage">
+												<option value="10" selected>10
+												<option value="20">20
+												<option value="50">50
+										</select></td>
+									</tr>
+									<tr>
+										<td width="15%"><b>Format</b></td>
+										<td>The file format of page is</td>
+										<td><select name="format">
+                                               <option value="" selected>Any format
+												<option value="pdf">Adobe Acrobat PDF (.pdf)
+												<option value="msword">Microsoft Word (.doc)
+												<option value="vnd.ms-excel">Microsoft Excel (.xls)
+                                               <option value="vnd.ms-powerpoint">Microsoft Powerpoint (.ppt)
+										</select></td>
+									</tr>
+									<tr>
+										<td width="15%"><b>Time</b></td>
+										<td width="29%">The last update of page</td>
+										<td width="56%"><select name=when>
+												<option value="" selected>Anytime</option>
+												<option value="90">Past 3 months</option>
+												<option value="180">Past 6 months</option>
+												<option value="360">Past one year</option>
+										</select></td>
+									</tr>
+									<tr>
+										<td width="15%"><b>Language</b></td>
+										<td>The language of page is</td>
+										<td><select size=1 name=lang>
+												<option value="">Any language</option>
+												<option value="zh-cn">Simplified Chinese</option>
+												<option value="zh-tw">Traditional Chinese</option>
+												<option value="en">English</option>
+										</select></td>
+									</tr>
+									<tr>
+										<td width="15%"><b>Term Location</b></td>
+										<td width="29%">Terms appear</td>
+										<td width="56%"><select size=1 name=where>
+											    <option value=""> Anywhere in the page</option> 
+												<option value="url">In the URL of page</option>
+												<option value="title">In the title of page</option>
+												<option value="content">In the content of page</option>
+										</select></td>
+									</TR>
+									<TR>
+										<td width="15%"><b>Site/Domain</b></td>
+										<td width="29%">The site/domain of page is</td>
+										<td width="56%"><FONT size=-1><input maxLength=100
+												size=35 name=site></td>
+									</TR>
+								</table>
+							</td>
+						</tr>
+					</TABLE>
+				</td>
+			</TR>
+		</TABLE>
+	</FORM>
+
+<form name="search" action="../search.jsp" method="get">
+		<input type="hidden" name="lang" value="zh-cn">
+		 <input type="hidden" name="qand" value="">
+		<input type="hidden" name="qphrase" value="">
+		<input type="hidden" name="qor" value="">			
+		<input type="hidden" name="qnot" value="">
+		<input type="hidden" name="where" value="">			 		
+	    <input type="hidden"	name="format" value="">
+ 		<input type="hidden" name="when" value="">
+	    <input type="hidden"	name="site" value="">	
+		<input type="hidden"	name="hitsPerPage" value="">
+	</form>
+
+	<br />
+	<div class="copyright">&copy;2012-2013 LIU Xiao-feng</div>
+</BODY>
+</HTML>

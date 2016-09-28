@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTC HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Kidden</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		.about {text-align: center; white-space: nowrap; font-size: 12px;}
+		
+		.copyright {text-align: center; font-size: 14px;}
+		
+		.help {text-align: center; white-space: nowrap; font-size: 12px;}
+		
+		.navigate { text-align: center; font-size: 14px; }
+
+		#search{
+            text-align: center;
+            position:relative;
+        }
+        .autocomplete{
+            border: 1px solid #9ACCFB;
+            background-color: blank;
+            text-align: left;
+        }
+        .autocomplete li{
+            list-style-type: none;
+        }
+        .clickable {
+            cursor: default;
+        }
+        .autohighlight {
+            background-color: #9ACCFB;
+        }
+	</style>
+	<script type="text/javascript"  src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/suggest.js" ></script>
+	
+</head>
+
+<body onLoad="queryfocus();">
+
+<br>
+<br>
+<br>
+  <!-- Logo image  -->
+	<div align="center">
+		<a href="./"><img src="../img/logo_big.gif" border="0" vspace="15" alt="Welcome to Kidden!" title="Welcome to Kidden!"></a>
+	</div>
+	
+	<form name="search" action="../search.jsp" method="get" onSubmit="return formCheck()"> 
+	
+		<!-- Navigate -->
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td nowrap align="middle">
+				<div class="navigate">
+					<b>Web</b>&nbsp;&nbsp;<a href="/kidden-image">Image</a>&nbsp;&nbsp;<a href="/kidden-music">Music</a>&nbsp;&nbsp;<a href="/kidden-news">News</a>
+				</div>
+			</td>
+		</tr>
+		</table>
+		
+		<!-- Search form -->
+		<div id ="search">
+		<table width="100%" cellpadding="10" cellspacing="0" border="0">
+		<tr>
+			<td align="middle">
+			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    <input type="hidden" name="lang" value="en"> 
+				<input type="text"  id="search-text"  name="query"size="40" maxlength="100" title="Input keywords here">
+				<input type="submit" id="submit" value="Kidden Search">
+			</td>
+		</tr>
+		</table>
+		</div>
+		
+		<br>
+		
+		<!-- Help-->
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+				<div class="help"><a href="advanced_web.html">Advanced Search</a>&nbsp;&nbsp;<a href="./">Help</a></div>
+			</td>
+		</tr>
+		</table>
+	
+	</form>
+	
+	<br><br><br><br>
+	
+	<!-- Dynamic content -->
+	
+	
+	<!--About -->
+	<div class="about">
+		<a href="./">Advertise</a>&nbsp-&nbsp<a href="./">About Kidden</a>&nbsp-&nbsp<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://localhost/');">Set Kidden to home page</a>
+	</div>
+	
+	<br>
+	
+	<!-- Copyright -->
+	<div class="copyright">
+		&copy;2012-2013&nbsp;LIU Xiao-feng
+	</div>
+	
+</body>
+</html>
